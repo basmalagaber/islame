@@ -1,0 +1,2 @@
+D:/route_flutter_assignment5/android/app/.cxx/Debug/222v1tf5/x86/CMakeFiles/edit_cache.dir
+D:/route_flutter_assignment5/android/app/.cxx/Debug/222v1tf5/x86/CMakeFiles/rebuild_cache.dir
