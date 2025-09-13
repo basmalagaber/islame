@@ -14,15 +14,13 @@ class OnboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size=MediaQuery.of(context).size;
-    const bodyStyle = TextStyle(fontSize: 20,
-        fontWeight: FontWeight.bold,
-        color: Color(0xffE2BE7F));
 
     const pageDecoration = PageDecoration(
       titleTextStyle: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold,
       color: Color(0xffE2BE7F)),
-      bodyTextStyle: bodyStyle,
-      // bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
+      bodyTextStyle: TextStyle(fontSize: 20,
+          fontWeight: FontWeight.bold,
+          color: Color(0xffE2BE7F)),
       pageColor: Color(0xff202020),
       imagePadding: EdgeInsets.zero,
       imageFlex: 3
@@ -35,7 +33,7 @@ class OnboardScreen extends StatelessWidget {
               height: size.height*0.3,
             fit: BoxFit.fill,),),
 
-          dotsFlex: 2,
+          dotsFlex: 4,
           dotsDecorator: DotsDecorator(
             color: Color(0xff707070),
             activeColor: Color(0xffE2BE7F)

@@ -72,7 +72,7 @@ class _AhadethTabState extends State<AhadethTab> {
                         Directionality(
                           textDirection: TextDirection.rtl,
                           child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 16),
+                            padding: EdgeInsets.symmetric(horizontal: 40),
                             child: Text(
                               hadeth.content.first,
                               textAlign: TextAlign.center,

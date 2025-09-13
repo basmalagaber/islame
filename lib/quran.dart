@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:route_flutter_assignment5/sura_detailes.dart';
 
 class QuranTab extends StatefulWidget {
    QuranTab({super.key});
@@ -315,7 +316,7 @@ class _QuranTabState extends State<QuranTab> {
             color: Colors.white
           ),),
           SizedBox(height: 8,),
-          searchResult.isNotEmpty?SizedBox():
+          searchResult.isNotEmpty || controlSearch.text.isNotEmpty?SizedBox():
           SizedBox(
             height: 150,
             child: ListView.separated(
@@ -377,47 +378,56 @@ class _QuranTabState extends State<QuranTab> {
               itemBuilder: (context, index) {
                 return Padding(
                     padding: EdgeInsets.all(2),
-                child: Row(
-                  children: [
-                    Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Image.asset("assets/images/SuraNumber.png"),
-                  Container(
-                    padding: EdgeInsets.only(top:4),
-                    child: Text("$index",style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        color: Colors.white),),)
-                      ],
-                    ),
-                    SizedBox(width: 16,),
-                    Expanded(child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          searchResult.isNotEmpty
-                              ? searchResult[index]
-                              : quranSuraNamesE[index],
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Colors.white,
+                child: InkWell(
+                  onTap: (){
+                    Navigator.pushNamed(context, SuraDetailes.routeName,
+                    arguments: [
+                      quranSuraNamesA[index]
+                      ,quranSuraNamesE[index]
+                    ,index]);
+                  },
+                  child: Row(
+                    children: [
+                      Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Image.asset("assets/images/SuraNumber.png"),
+                    Container(
+                      padding: EdgeInsets.only(top:4),
+                      child: Text("${index+1}",style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          color: Colors.white),),)
+                        ],
+                      ),
+                      SizedBox(width: 16,),
+                      Expanded(child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            searchResult.isNotEmpty
+                                ? searchResult[index]
+                                : quranSuraNamesE[index],
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
 
-                        Text("${surahAyats[index]}",style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Colors.white),),
-                      ],
-                    ),
-                    ),
-                   Text("${quranSuraNamesA[index]}",style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        color: Colors.white),)
-                  ],
+                          Text("${surahAyats[index]}",style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Colors.white),),
+                        ],
+                      ),
+                      ),
+                     Text("${quranSuraNamesA[index]}",style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          color: Colors.white),)
+                    ],
+                  ),
                 ),
                 );
               },

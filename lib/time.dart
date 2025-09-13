@@ -13,7 +13,7 @@ class TimeTab extends StatelessWidget {
           Image.asset(
             "assets/images/time1.png",
             width: size.width*.9,
-            height: size.height*.3,
+            height: size.height*.23,
           ),
           Container(
             alignment: Alignment.topLeft,
@@ -27,17 +27,18 @@ class TimeTab extends StatelessWidget {
           Row(
             children: [
               Container(
-                margin: EdgeInsets.symmetric(vertical: size.height*.04,horizontal: size.width*.04),
+                margin: EdgeInsets.symmetric(vertical: size.height*.02,horizontal: size.width*.04),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: Color(0xff202020),
                   border: Border.all(color: Color(0xffE2BE7F),width: 2)
                 ),
-                height: size.height*.255,
+                height: size.height*.30,
                 width: size.width*.45,
                 child: Column(
                   children: [
                     Image.asset("assets/images/time2.png"),
+                    SizedBox(height: 20,),
                     Text("Evening Azkar",style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
@@ -47,17 +48,18 @@ class TimeTab extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.symmetric(vertical: size.height*.04),
+                margin: EdgeInsets.symmetric(vertical: size.height*.02),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: Color(0xff202020),
                     border: Border.all(color: Color(0xffE2BE7F),width: 2)
                 ),
-                height: size.height*.255,
+                height: size.height*.30,
                 width: size.width*.45,
                 child:  Column(
                   children: [
                     Image.asset("assets/images/time3.png"),
+                    SizedBox(height: 20,),
                     Text("Morning Azkar",style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
